@@ -11,42 +11,22 @@ function makeAPICall(onReadyStateChangeFunction, endPoint, params){
 
     xhttp.open("Get", URL, true)
     xhttp.send();
-}
+};
 
 //Gets the current exchange rates compared to the based rate
-function getLatestRates(){
-    let baseCurrency = "USD";
+function getLatestRates(baseCurrency, callBackFunction){
     let params = "base="+baseCurrency;
-
-    makeAPICall(displayLatestRates, "latest", params);
-}
-function displayLatestRates(xhttp){
-    console.log(xhttp.response)
-}
+    makeAPICall(callBackFunction, "latest", params);
+};
 
 //Gets the history of a certain currency over a period of time
-function getHistoryOfRate(){
-    let startAt = "2018-01-01";
-    let endAt = "2018-01-10";
-    let symbols = "AUD";
-
+function getHistoryOfRate(startAt, endAt, symbols, callBackFunction){
     let params = "start_at=" + startAt + "&end_at=" + endAt + "&symbols=" + symbols;
-
-    makeAPICall(displayHistoryOfRate, "history", params)
-}
-function displayHistoryOfRate(xhttp){
-    console.log(xhttp.response)
-}
+    makeAPICall(callBackFunction, "history", params)
+};
 
 //Gets the conversion rate for the selection base currency => compared currency
-function getSelectedConversionRate(){
-    let baseCurrency = "USD";
-    let comparedCurrency = "AUD";
-
+function getSelectedConversionRate(baseCurrency, comparedCurrency, callBackFunction){
     let params =  "base=" +baseCurrency + "&symbols=" + comparedCurrency;
-
-    makeAPICall(displaySelectedConversionRate, "latest", params)
-}
-function displaySelectedConversionRate(xhttp){
-    console.log(xhttp.response)
-}
+    makeAPICall(callBackFunction, "latest", params)
+};

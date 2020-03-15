@@ -6,9 +6,6 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
-    <!-- Local Javascript Files -->
-    <script src="script.js"></script>
 
     <title>Currency Box</title>
 </head>
@@ -36,12 +33,57 @@
     </nav>
 
     <div class="container">
+        <form action="">
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Amount</label>
+                        <input type="number" class="form-control" id="AmountInput" placeholder="1" value=1>
+                    </div>
+                </div>
 
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">From</label>
+                        <select class="custom-select" id="FromSelectMenu">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-1 text-center my-auto">
+                    <button class="btn btn-outline-dark" id='switchCurrencyButton'>Switch</button>
+                </div>
+
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">To</label>
+                        <select class="custom-select" id="ToSelectMenu">
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col text-center">
+                    <button class="btn btn-outline-dark" id='currencyConvertButton'>Convert</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="row">
+            <div class="col text-center mt-5">
+                <h2 id='convertedCurrencyDisplay'></h2>
+            </div>
+        </div>
     </div>
 
     <!-- BootStrap Files -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Local JS Files -->
+    <script src="apiCalls.js"></script>
+    <script src="index-script.js"></script>
 </body>
 </html>
