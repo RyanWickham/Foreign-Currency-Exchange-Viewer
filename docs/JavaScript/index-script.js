@@ -3,13 +3,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
     makeAPICall(loadDataOnIndexPage, 'latest', '');
 
     //set function to the 'switchCurrencyButton'
-    document.getElementById("switchCurrencyButton").addEventListener("click", function(event){
+    document.getElementById("SwitchCurrencyButton").addEventListener("click", function(event){
         event.preventDefault();
         switchMenuSelectedValues();
     });
 
     //Set function for the 'currencyConvertButton'
-    document.getElementById("currencyConvertButton").addEventListener("click", function(event){
+    document.getElementById("CurrencyConvertButton").addEventListener("click", function(event){
         event.preventDefault();
         let from = document.getElementById('FromSelectMenu').value;
         let to = document.getElementById('ToSelectMenu').value;
@@ -78,7 +78,7 @@ function displayCurrecyConertedData(xttp){
 
     let displayText = fromAmount + " " + fromCurrency + " = " + toAmount + " " + toCurrency;
 
-    document.getElementById("convertedCurrencyDisplay").innerText = displayText;
+    document.getElementById("ConvertedCurrencyDisplay").innerText = displayText;
 }
 
 function calculateConvertedAmount(xttp, fromAmount, currency){

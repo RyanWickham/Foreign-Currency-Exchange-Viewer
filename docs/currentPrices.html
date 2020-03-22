@@ -7,6 +7,8 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="./CSS/styles.css">
+
     <title>Currency Box</title>
 </head>
 <body>
@@ -33,7 +35,40 @@
     </nav>
 
     <div class="container">
+        <!-- Base currency select -->
+        <div class="form-group mt-5">
+            <div class="row">
+                <label class='col-4 offset-1 text-right h3'for="formGroupExampleInput">Base Currency</label>
+                <select class="custom-select col-3 my-auto" id="BaseCurrencySelectMenu">
+                </select>
+                <div class="col-2 my-auto">
+                    <button class="btn btn-outline-dark" id='CurrencyUpdateButton'>Update</button>
+                </div>
+            </div>
+        </div>
 
+        <!-- Currencies with amount -->
+        <div class="row currency-prices my-5 text-center">
+            <!-- LEFT COLUMN -->
+            <div id='LeftColumn' class="col-6 border-right border-dark">
+                <div class="row currency-info-header mb-3 border-bottom">
+                    <div class="col-4 offset-2 currency-name">--- CURRENCY ---</div>
+                    <div class="col-4 currency-amount">--- AMOUNT ---</div>
+                </div>
+
+                <!-- Elements <div class='row'> are added here for the currencies with JS-->
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div id='RightColumn' class="col-6">
+                <div class="row currency-info-header mb-3 border-bottom">
+                    <div class="col-4 offset-2 currency-name">--- CURRENCY ---</div>
+                    <div class="col-4 currency-amount">--- AMOUNT ---</div>
+                </div>
+
+                <!-- Elements <div class='row'> are added here for the currencies with JS-->
+            </div>
+        </div>
     </div>
 
     <!-- BootStrap Files -->
@@ -43,5 +78,6 @@
 
     <!-- Local Javascript Files -->
     <script src="./JavaScript/apiCalls.js"></script>
+    <script src="./JavaScript/currentPrices-script.js"></script>
 </body>
 </html>
