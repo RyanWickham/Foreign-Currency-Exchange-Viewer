@@ -4,10 +4,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
     //set default base currency as AUD    
     document.getElementById('BaseCurrencySelectMenu').value = 'AUD';
 
-    //Get data list of curriencies and set them into the dropboxes
+    //Get data list of curriencies and their prices, then set them on the page
     getLatestRates(baseCurrency = 'AUD', callBackFunction = loadDataOnCurrentPrices);
-
-    //Set default base currency
 
     //Set function for CurrencyUpdateButton
     document.getElementById("CurrencyUpdateButton").addEventListener("click", function(event){

@@ -20,6 +20,7 @@ function getLatestRates(baseCurrency, callBackFunction){
 };
 
 //Gets the history of a certain currency over a period of time
+//startAt/EndAt format is yyyy-mm-dd
 function getHistoryOfRate(startAt, endAt, symbols, callBackFunction){
     let params = "start_at=" + startAt + "&end_at=" + endAt + "&symbols=" + symbols;
     makeAPICall(callBackFunction, "history", params)
