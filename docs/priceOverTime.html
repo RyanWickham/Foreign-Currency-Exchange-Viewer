@@ -38,6 +38,42 @@
         </div>
     </nav>
 
+    <div class="container">
+        <form action="">
+            <div class="row justify-content-center mb-3">
+                <div class="col-3 offset-1">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">From</label>
+                        <select class="custom-select" id="FromSelectMenu">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-1 text-center my-auto">
+                    Compared
+                </div>
+
+                <div class="col-3">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">To</label>
+                        <select class="custom-select" id="ToSelectMenu">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-2 text-left my-auto">
+                    Over Time
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col text-center">
+                    <button class="btn btn-outline-dark" id='GenerateGraphButton'>Generate Graph</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
     <div class="container graph-container h-50">
         <canvas id="pricesGraph" width="100%" height='100%'></canvas>
     </div>

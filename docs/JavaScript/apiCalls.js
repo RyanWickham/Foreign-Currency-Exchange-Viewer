@@ -5,6 +5,9 @@ function makeAPICall(onReadyStateChangeFunction, endPoint, params){
         if (this.readyState == 4 && this.status == 200) {
             onReadyStateChangeFunction(xhttp);
         }
+        if(this.status == 400){
+            alert('There is no data available for this pairing of curriencies, try a different combination.')
+        }
     };
 
     let URL = "https://api.exchangeratesapi.io/" + endPoint + "?" + params;
@@ -21,8 +24,8 @@ function getLatestRates(baseCurrency, callBackFunction){
 
 //Gets the history of a certain currency over a period of time
 //startAt/EndAt format is yyyy-mm-dd
-function getHistoryOfRate(startAt, endAt, symbols, callBackFunction){
-    let params = "start_at=" + startAt + "&end_at=" + endAt + "&symbols=" + symbols;
+function getHistoryOfRate(startAt, endAt, basedCurrency, symbols, callBackFunction){
+    let params = "start_at=" + startAt + "&end_at=" + endAt + "&base=" + basedCurrency + "&symbols=" + symbols;
     makeAPICall(callBackFunction, "history", params)
 };
 
